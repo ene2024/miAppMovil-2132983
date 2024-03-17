@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      {{title}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,22 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <img [src]="imgUrl">
   </div>
+
+  <div id="container">
+    <Lista-component> </Lista-component>
+
+    <p [ngClass] = "{'rojo': verdadero, 'azul': !verdadero}"> 
+      Si <strong> verdadero</strong> es true el texto será <strong> rojo</strong>
+      Sino el texto será <strong> azul</strong>
+      
+    </p>
+  </div>
+
+  <div id="container">
+    <ion-button (click)="hazmeClic()"> Hazme Clic! </ion-button>
+  </div>
+  
+
 </ion-content>
