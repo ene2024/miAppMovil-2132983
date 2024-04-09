@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mi App de Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Mi App de Tareas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card id="card" *ngFor="let post of postInfo; let i = index">
+    <ion-card-header>
+      <ion-card-subtitle id="subtitle"> <strong> {{post.title}} </strong> </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content id="card-content">
+      <p style="color: black;"> <strong> Fecha </strong> </p> 
+      <p style="margin-left: 30%;"> {{post.date}} </p>
+    </ion-card-content>
+  
+    <ion-button id="card-button" fill="clear" strong="true" > + Ver más detalles </ion-button>
+  </ion-card>
+
+  
+
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button id="floating-button">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>
