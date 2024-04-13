@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agregar Tarea</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Agregar Tarea</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div class="center">
+    <form id="post-form" [formGroup] = "postForm">
+      <ion-item>
+        <ion-label position="stacked"> Nombre de la tarea </ion-label>
+        <ion-input type="text" 
+        formControlName="title"> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" > Fecha estimada en que se completará </ion-label>
+        <div id="date-selector">
+          <ion-select formControlName="month" placeholder="Mes">
+            <ion-select-option *ngFor="let month of months" [value]="month"> {{month}} </ion-select-option>
+          </ion-select>
+          <ion-select formControlName="year" placeholder="Año">
+            <ion-select-option *ngFor="let year of years" [value]="year"> {{year}} </ion-select-option>
+          </ion-select>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked"> Descripción </ion-label>
+        <ion-textarea formControlName="desc">
+        </ion-textarea>
+      </ion-item>
+
+    </form>
+
+    <ion-button (click)="insert()" shape="round" class="send-button">
+      Agregar
+    </ion-button>
+
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+      <ion-fab-button (click)="tareas()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </div>  
+</ion-content>

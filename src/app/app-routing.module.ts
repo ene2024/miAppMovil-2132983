@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'tareas',
     loadChildren: () => import('./tareas/tareas.module').then( m => m.TareasPageModule)
   },
+  {
+    path: 'agregar-tarea',
+    loadChildren: () => import('./agregar-tarea/agregar-tarea.module').then( m => m.AgregarTareaPageModule)
+  },
 ];
 
 @NgModule({
