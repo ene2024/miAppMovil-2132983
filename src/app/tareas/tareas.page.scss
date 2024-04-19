@@ -14,12 +14,17 @@ ion-toolbar{
     --color:white;
 }
 
+ion-content{
+    --ion-background-color: #bc24a4;
+}
+
 #card{
     background-color: white;
     color: #bc24a4;
     border-radius: 0;
     margin-top: 40px;
     width: 70%;
+    margin-left: 15%;
 }
 
 #subtitle{
@@ -29,6 +34,7 @@ ion-toolbar{
 #card-content{
     display: inline-flex;
     flex-direction: row;
+
 }
 
 
@@ -48,13 +54,13 @@ ion-toolbar{
     --border-width: 4px;
 }
 
-.general{
-    background-color: #bc24a4;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+
+ion-modal{
+    --background:white;
+}
+
+ion-select-option{
+    --background: white;
 }
 
 @media only screen and (min-width: 740px) {
@@ -65,11 +71,7 @@ ion-toolbar{
         display: inline-block;
         width: 17%;
         margin-top: 4%;
-    }
-
-    .general{
-        flex-direction: row;
-        align-items: start;
+        margin-left: 3%;
     }
 
   }

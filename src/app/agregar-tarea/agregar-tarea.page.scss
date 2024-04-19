@@ -4,16 +4,8 @@
     width: 80%;
     height: 50%;
     margin-top: 40px;
+    --ion-background-color:white;
 }
-
-#date-selector{
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-}
-
 .center {
     display: flex;
     align-items: center;
@@ -22,11 +14,19 @@
     height: 100%;
 }
 
+ion-content{
+    --ion-background-color:white;
+}
+
 ion-toolbar{
     --border-style:inset;
     --border-color: black;
     --border-width: 0 0 2px 0;
-    --background-color: white;
+    --ion-background-color:white;
+}
+
+ion-grid{
+    width: 100%;
 }
 
 .send-button{
@@ -39,6 +39,11 @@ ion-toolbar{
     --border-width: 4px;
     --border-radious: 10px;
 
-    width: 80%;
+    width: 40%;
     height: 10%;
 }
+
+.Form-item{
+    --padding-bottom: 20%;
+}
+

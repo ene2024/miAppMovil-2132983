@@ -15,6 +15,6 @@ import { TareasPage } from './tareas.page';
     IonicModule,
     TareasPageRoutingModule
   ],
-  declarations: [TareasPage]
+  declarations: []
 })
 export class TareasPageModule {}
