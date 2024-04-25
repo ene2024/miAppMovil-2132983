@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Injectable, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Output } from '@angular/core';
+import { TareasSeriveService } from '../tareas.serive.service';
+import { postInfo } from '../tareas/tareas.page';
 
 @Component({
   selector: 'app-agregar-tarea',
@@ -8,13 +10,16 @@ import { Output } from '@angular/core';
   styleUrls: ['./agregar-tarea.page.scss'],
 })
 
-export class AgregarTareaPage {
-  @Output() messageEvent= new EventEmitter<FormGroup>();
-  @Output() cancelEvent= new EventEmitter<null>();
+export class AgregarTareaPage{
+  @Output() messageEvent= new EventEmitter<null>();
 
-  constructor(private formBuilder: FormBuilder) {
+  tareas: postInfo[]=[];
+
+  constructor(private formBuilder: FormBuilder, private service:TareasSeriveService) {
 
   }
+
+
 
   postForm= this.formBuilder.group({
     title: ['', Validators.required],
@@ -49,12 +54,26 @@ export class AgregarTareaPage {
 
 
   agregarTarea(){
-    this.messageEvent.emit(this.postForm);
+    let month = this.postForm.value.month || '';
+
+    if(month.length == 1){
+        month = '0' + month;
+    }
+
+    let input: postInfo = {
+      title:this.postForm.value.title || '',
+      date: month + '/' + this.postForm.value.year || '',
+      desc: this.postForm.value.desc || ''
+    };
+
+    this.service.Agregar(input);
+    this.messageEvent.emit();
     this.postForm.reset();
   }
 
   cancel(){
-    this.cancelEvent.emit();
+    
+    this.messageEvent.emit();
     this.postForm.reset();
 
   }

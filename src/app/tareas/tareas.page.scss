@@ -63,6 +63,16 @@ ion-select-option{
     --background: white;
 }
 
+.ion-padding{
+    color: #000;
+    background-color: white;
+}
+
+.ion-accordion{
+    background-color: #dcdcdc;
+    --color: #bc24a4;
+}
+
 @media only screen and (min-width: 740px) {
     #card{
         background-color: white;

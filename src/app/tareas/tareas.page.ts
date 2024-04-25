@@ -3,6 +3,7 @@ import { IonModal, IonPopover, PopoverController } from '@ionic/angular';
 import { ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { OverlayEventDetail } from '@ionic/core/components';
+import { TareasSeriveService } from '../tareas.serive.service';
 
 
 export interface postInfo{
@@ -20,45 +21,25 @@ export interface postInfo{
 
 export class TareasPage implements OnInit{
 
-  constructor() { }
+  tareas: postInfo[]=[];
 
+  constructor(private service: TareasSeriveService) { }
 
-
-  
-
-  ngOnInit(){
+  ngOnInit(): void {
+    this.tareas = this.service.Get();
   }
-
-  postInfo: postInfo [] = [{title: "Llevar a Bruno al veterinario", date: "05/24", desc: "Hello world!"}, 
-  {title: "Recordar tarea de Aplicaciones Móviles", date:"05/24", desc: "Hello world!"}];
 
   isModalOpen:boolean = false;
   canDismiss:boolean= false;
 
-
-  registrarTarea($event: FormGroup){
-
-
-    let month = $event.value.month;
-
-    if(month.length == 1){
-        month = '0' + month;
-    }
-
-    this.postInfo.push({
-        title: $event.value.title,
-        date: month + '/' + $event.value.year.substring(2),
-        desc: $event.value.desc,
-    })
-
-    this.setCanDismiss(true);
-    this.setIsModalOpen(false);
-
-  }
-
   cancelarForm(){
     this.setCanDismiss(true);
     this.setIsModalOpen(false);
+  }
+
+  openForm(){
+    this.setIsModalOpen(true);
+    this.setCanDismiss(false);
   }
 
   setIsModalOpen(set: boolean){
@@ -69,10 +50,12 @@ export class TareasPage implements OnInit{
     this.canDismiss=set;
   }
 
-  openForm(){
-    this.setIsModalOpen(true);
-    this.setCanDismiss(false);
+  deletePost(index: number){
+    this.service.Delete(index);
+    this.tareas=this.service.Get();
   }
+
+
 
 
 }

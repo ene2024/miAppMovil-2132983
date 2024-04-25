@@ -13,7 +13,9 @@
   </ion-fab>
   
   <div class="general">
-    <ion-card id="card" *ngFor="let post of postInfo; let i = index">
+    
+    <ion-card id="card" *ngFor="let post of tareas; let i = index">
+      <ion-button id="card-button" fill="clear" strong="true" (click)="deletePost(i)"> Eliminar </ion-button>
       <ion-card-header>
         <ion-card-subtitle id="subtitle"> <strong> {{post.title}} </strong> </ion-card-subtitle>
       </ion-card-header>
@@ -25,7 +27,14 @@
 
       </ion-card-content>
     
-      <ion-button id="card-button" fill="clear" strong="true" > + Ver más detalles </ion-button>
+        <ion-accordion-group>
+          <ion-accordion class="ion-accordion">
+            <ion-item slot="header" color="white">
+              <ion-label> + Ver más detalles </ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content"> {{post.desc}} </div>
+          </ion-accordion>
+        </ion-accordion-group>
     </ion-card>
   
 
@@ -34,7 +43,7 @@
 
   <ion-modal [isOpen] = "isModalOpen" [canDismiss]="canDismiss">
     <ng-template styles="" >
-      <app-agregar-tarea  (cancelEvent)="cancelarForm()" (messageEvent) = "registrarTarea($event)"> </app-agregar-tarea>
+      <app-agregar-tarea (messageEvent) = "cancelarForm()"> </app-agregar-tarea>
     </ng-template>
   </ion-modal>
 
