@@ -1,0 +1,95 @@
+
+
+ion-title.title-large {
+    font-size: 30px;
+}
+
+ion-toolbar{
+    --border-style:inset;
+    --border-color: white;
+    --border-width: 0 0 2px 0;
+    --background:#bc24a4;
+    --color:white;
+}
+
+ion-content{
+    --ion-background-color: #bc24a4;
+}
+
+.general{
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.DetallesContainer{
+    background-color: white;
+    width: 80%;
+    height: 50%;
+}
+
+#DetallesInfo{
+    color: #000;
+    padding-top: 20px;
+    font-size: medium;
+}
+
+#card{
+    background-color: white;
+    color: #bc24a4;
+    border-radius: 0;
+    margin-top: 40px;
+    width: 70%;
+}
+
+#subtitle{
+    color: #bc24a4;
+    padding-bottom: 30px;
+}
+
+#card-content{
+    display: inline-flex;
+    flex-direction: row;
+
+}
+
+#button-icons{
+    --color: #000
+}
+
+
+#card-button{
+    background-color: #dcdcdc;
+    --color: #bc24a4;
+    display: block;
+}
+
+#floating-button{
+    --background: #4cfcdc;
+    --color: #000;
+
+
+    --border-color: #000;
+    --border-style: dashed;
+    --border-width: 4px;
+}
+
+
+ion-modal{
+    --background:white;
+}
+
+ion-select-option{
+    --background: white;
+}
+
+.ion-padding{
+    color: #000;
+    background-color: white;
+}
+
+.ion-accordion{
+    background-color: #dcdcdc;
+    --color: #bc24a4;
+}

@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'agregar-tarea',
     loadChildren: () => import('./agregar-tarea/agregar-tarea.module').then( m => m.AgregarTareaPageModule)
   },
+  {
+    path: 'tareas/:id',
+    loadChildren: () => import('./detalles-paquetes/detalles-paquetes.module').then( m => m.DetallesPaquetesPageModule)
+  },
 ];
 
 @NgModule({

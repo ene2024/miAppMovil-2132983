@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tareas" >
+        <ion-icon slot="start" name="chevron-back-circle-outline">  </ion-icon> 
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Mi App de Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+  <div class="general">
+    <ion-card id="card">
+      <ion-card-header>
+        <ion-card-title id="subtitle"> <strong> {{tarea.title}} </strong> </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+      <ion-card-title> <strong> Descripción </strong> </ion-card-title>
+        <div id="DetallesInfo">
+          {{tarea.desc}}
+        </div>
+      </ion-card-content>
+
+
+      <ion-button id="button-icons" slots="icon-only" fill="clear"> <ion-icon size="large" name="arrow-redo"></ion-icon> </ion-button>
+      <ion-button  id="button-icons" fill="clear"> <ion-icon size="large" name="save"></ion-icon> </ion-button>
+      <ion-button  id="button-icons" fill="clear"> <ion-icon size="large" name="mail"></ion-icon> </ion-button>  
+
+    </ion-card>
+  </div>
+
+  
+
+
+</ion-content>
+
